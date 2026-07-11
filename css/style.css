@@ -1,0 +1,157 @@
+/* Global Styles */
+body {
+    background: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 30px;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+/* Login Form */
+.form-control {
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    padding: 10px 15px;
+}
+
+.form-control:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.btn-danger {
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(220, 53, 69, 0.4);
+}
+
+/* Exploit Buttons */
+.exploit-btn {
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.exploit-btn:hover {
+    transform: scale(1.02);
+}
+
+/* Attack Console */
+#attackConsole {
+    background: #0a0e17;
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    min-height: 120px;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 0 0 10px 10px;
+    line-height: 1.6;
+}
+
+#attackConsole::-webkit-scrollbar {
+    width: 6px;
+}
+
+#attackConsole::-webkit-scrollbar-track {
+    background: #1a1f2e;
+}
+
+#attackConsole::-webkit-scrollbar-thumb {
+    background: #00ff41;
+    border-radius: 3px;
+}
+
+.log-entry {
+    border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+    padding: 3px 8px;
+}
+
+.log-time {
+    color: #6c757d;
+    margin-right: 10px;
+}
+
+.log-level-danger { color: #ff4444; }
+.log-level-success { color: #00ff41; }
+.log-level-warning { color: #ffaa00; }
+.log-level-info { color: #44aaff; }
+
+/* Database Table */
+.db-table {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.db-table th {
+    background: #f8f9fa;
+    position: sticky;
+    top: 0;
+}
+
+.password-plaintext {
+    color: #dc3545;
+    font-weight: 600;
+    background: #fff5f5;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Vulnerability Tags */
+.vuln-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    margin: 3px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.vuln-tag.critical { background: #dc3545; color: white; }
+.vuln-tag.high { background: #fd7e14; color: white; }
+.vuln-tag.medium { background: #ffc107; color: #212529; }
+.vuln-tag.low { background: #20c997; color: white; }
+
+/* Vulnerability Items */
+.vulnerability-item {
+    padding: 5px 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border-left: 3px solid #dc3545;
+    background: #f8f9fa;
+    font-size: 0.85rem;
+}
+
+/* Alert Messages */
+.alert {
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container { padding: 10px; }
+    .navbar-brand { font-size: 1rem; }
+}
