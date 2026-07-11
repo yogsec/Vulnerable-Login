@@ -2,6 +2,7 @@
 
 A deliberately vulnerable login form designed for security education and training. This application contains 12 common login authentication vulnerabilities for students to discover, exploit, and learn from.
 
+![Vulnerable Login Page](https://github.com/yogsec/Vulnerable-Login/blob/main/Screenshot%20From%202026-07-11%2021-54-20.png?raw=true)
 ## Disclaimer
 
 **THIS APPLICATION IS FOR EDUCATIONAL PURPOSES ONLY!**
