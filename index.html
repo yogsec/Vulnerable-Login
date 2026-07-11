@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Login Lab</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-exclamation-triangle"></i> Vulnerable Login Page
+            </a>
+            <span class="badge bg-warning text-dark ms-3">
+                <i class="fas fa-bug"></i> Security Training
+            </span>
+            
+            <!-- Right side navbar items -->
+            <div class="ms-auto d-flex align-items-center">
+                <!-- User Info - Hidden by default -->
+                <div id="navbarUserInfo" class="d-none me-3">
+                    <span class="text-white me-2">
+                        <i class="fas fa-user-circle"></i> 
+                        <span id="navbarUsername">User</span>
+                    </span>
+                    <span id="navbarRole" class="badge bg-info text-dark">Role</span>
+                </div>
+                
+                <!-- Logout Button - Hidden by default -->
+                <button id="navbarLogoutBtn" class="btn btn-sm btn-outline-light d-none">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+                
+                <!-- Vulnerability Count -->
+                <span class="badge bg-light text-dark ms-2" id="vulnCount">
+                    Vulnerabilities: 0
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <!-- Login Card -->
+                <div class="card shadow">
+                    <div class="card-header bg-danger text-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-lock"></i> Login Form
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        
+                        <!-- Alert Messages -->
+                        <div id="alertMessage" class="alert d-none" role="alert"></div>
+
+                        <!-- Login Form -->
+                        <form id="loginForm">
+                            <input type="hidden" name="csrf_token" id="csrfToken" value="fixed_token_123">
+
+                            <!-- Username -->
+                            <div class="mb-3">
+                                <label for="username" class="form-label fw-bold">
+                                    <i class="fas fa-user"></i> Username
+                                </label>
+                                <input type="text" class="form-control" id="username" 
+                                       placeholder="Enter username" value="admin">
+                                <small class="text-muted">
+                                    Try: <code>' OR '1'='1</code> or <code>admin' --</code>
+                                </small>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label fw-bold">
+                                    <i class="fas fa-key"></i> Password
+                                </label>
+                                <input type="password" class="form-control" id="password" 
+                                       placeholder="Enter password" value="password123">
+                                <small class="text-muted">
+                                    Try: anything when using SQL injection
+                                </small>
+                            </div>
+
+                            <!-- Login Button -->
+                            <button type="submit" class="btn btn-danger w-100" id="loginBtn">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                        </form>
+
+                        <hr>
+
+                        
+
+                <!-- Vulnerability List -->
+                <div class="card mt-3">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">
+                            <i class="fas fa-exclamation-triangle text-warning"></i>
+                            Login Vulnerabilities
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="vulnerabilityList" class="row"></div>
+                    </div>
+                </div>
+
+                <!-- User Database -->
+                <div class="card mt-3">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">
+                            <i class="fas fa-database text-danger"></i>
+                            User Database
+                        </h6>
+                    </div>
+                    <div class="card-body p-0" style="max-height: 200px; overflow-y: auto;">
+                        <div id="userDatabase"></div>
+                    </div>
+                </div>
+
+                <!-- Session Info -->
+                <div class="card mt-3">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">
+                            <i class="fas fa-id-card"></i> Session Information
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <small class="text-muted">Session ID:</small>
+                                <code id="sessionDisplay" class="d-block text-break">Not logged in</code>
+                            </div>
+                            <div class="col-md-6">
+                                <small class="text-muted">Login Attempts:</small>
+                                <span id="attemptsDisplay" class="d-block">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/vulnerabilities.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
