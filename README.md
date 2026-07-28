@@ -1,4 +1,4 @@
-# Vulnerable-Login
+# Vulnerable Login (Authentication) Form
 
 A deliberately vulnerable login form designed for security education and training. This application contains 12 common login authentication vulnerabilities for students to discover, exploit, and learn from.
 
@@ -72,4 +72,6 @@ The application is hosted on GitHub Pages:
 - Severity: Medium
 - Description: Anti-CSRF token is present but never validated
 
+---
 
+LinkTree: [https://linktr.ee/abhinavsingwal](https://linktr.ee/abhinavsingwal)
