@@ -74,4 +74,4 @@ The application is hosted on GitHub Pages:
 
 ---
 
-LinkTree: [https://linktr.ee/abhinavsingwal](https://linktr.ee/abhinavsingwal)
+**LinkTree**: [https://linktr.ee/abhinavsingwal](https://linktr.ee/abhinavsingwal)
